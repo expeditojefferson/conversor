@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CoinVersor | O melhor Conversor de Moedas</title>
+</head>
+<body>
+    <main>
+        <section id="tela">
+            <h1>Conversor de Moedas</h1>
+            <div class="area-inputs">
+                <div class="moeda">
+                    <label for="campo-moeda-1">Converter <strong>de</strong></label>
+                    <select id="campo-moeda-1"></select>
+                </div>
+                <div class="moeda">
+                    <label for="campo-moeda-2">Converter <strong>para</strong></label>
+                    <select id="campo-moeda-2"></select>
+                </div>
+                <input type="number" id="quantia-digitada" placeholder="$" required>
+                <input type="submit" value="Converter" id="btn-convert" onclick="convert()">
+            </div>
+            <div class="area-respostas">
+                <div class="moeda-1">
+                    <!--img do pais da moeda-->
+                    <img src="https://flagcdn.com/br.svg" id="img">
+                    <!--nome da moeda-->
+                    <span id="nome-moeda">
+                        Real
+                    </span>
+                    <!--valor a ser convertido-->
+                    <span id="valor">
+                        R$ 12.890,00
+                    </span>
+                </div>
+                <div class="arrow">
+                    ⮃
+                </div>
+                <div class="moeda-1">
+                    <!--img do pais da moeda-->
+                    <img id="img1">
+                    <!--nome da moeda-->
+                    <span id="nome-moeda1">
+                        Real
+                    </span>
+                    <!--valor a ser convertido-->
+                    <span id="valor1">
+                        R$ 12.890,00
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
