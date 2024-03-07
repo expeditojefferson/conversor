@@ -11,6 +11,26 @@ const moedas = [
     'YER', 'ZAR', 'ZMK', 'ZWL', 'XAU'
 ];
 
+const tipoConverção = {
+    'Preço Alto': 'high',
+    'Preço Baixo': 'low',
+    'Preço de Compra': 'bid',
+    'Preço de Venda': 'ask',
+}
+
+let localSelect = document.querySelector('#tipo-de-valor')
+
+Object.keys(tipoConverção).forEach(function(item){
+    let chave = item;
+    let valor = tipoConverção[item]
+
+    let option = document.createElement('option')
+    option.value = `${valor}`
+    option.innerText = `${chave}`
+
+    localSelect.appendChild(option)
+})
+
 let selectTag = document.querySelector('#campo-moeda-1')
 let selectTag2 = document.querySelector('#campo-moeda-2')
 
@@ -31,12 +51,13 @@ function convert() {
     else{
         let moeda1 = document.querySelector('#campo-moeda-1').value
         let moeda2 = document.querySelector('#campo-moeda-2').value
+        let tipoConver = localSelect.value
         
-        buscaValor(moeda1, moeda2)
+        buscaValor(moeda1, moeda2, tipoConver)
     }
 }
 
-function buscaValor(moeda1, moeda2){
+function buscaValor(moeda1, moeda2, tipo){
 
     fetch(`https://economia.awesomeapi.com.br/last/${moeda1}-${moeda2}`)
     .then((response)=>{
@@ -47,7 +68,7 @@ function buscaValor(moeda1, moeda2){
     })
     .then((data)=>{
         const cotacao = data[`${moeda1}${moeda2}`];
-        let valorConversao = cotacao.bid
+        let valorConversao = cotacao[`${tipo}`];
         
         let numDigitado = document.querySelector('#quantia-digitada').value
 
@@ -79,3 +100,21 @@ function buscaValor(moeda1, moeda2){
         alert(e)
     })
 }
+
+let btnMoreInfors = document.querySelector('#duvida')
+let abrirModal = false
+
+btnMoreInfors.addEventListener('click', ()=>{
+    abrirModal = !abrirModal
+
+    let modal = document.querySelector('.modal')
+
+    if(abrirModal) {
+        modal.style.display = 'block'
+        btnMoreInfors.style.color = 'red'
+    }
+    else {
+        modal.style.display = 'none'
+        btnMoreInfors.style.color = '#4e4e4e'
+    }
+})

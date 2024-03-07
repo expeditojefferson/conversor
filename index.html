@@ -19,7 +19,31 @@
                     <label for="campo-moeda-2">Converter <strong>para</strong></label>
                     <select id="campo-moeda-2"></select>
                 </div>
-                <input type="number" id="quantia-digitada" placeholder="$" required>
+                <div class="valores">
+                    <input type="number" id="quantia-digitada" placeholder="$" required>
+                    <abbr title="Mais informações"><span id="duvida">🛈</span></abbr>
+                    <div class="modal">
+                        <p>Nessa area voçe seleciona qual serar o valor
+                            da cotação da moeda
+                        </p>
+                        <br>
+                        <p>
+                            <stong class="destaque">Preço alto:</stong> O valor mais alto das ultimas horas
+                        </p>
+                        <p>
+                            <stong class="destaque">Preço baixo:</stong> O valor mais baixo das ultimas horas
+                        </p>
+                        <p>
+                            <stong class="destaque">Preço de compra da moeda:</stong> O valor em que a moeda está sendo comprada nas ultimas horas
+                        </p>
+                        <p>
+                            <stong class="destaque">Preço de venda da moeda:</stong> O valor em que a moeda está sendo vendida nas ultimas horas
+                        </p>
+                    </div>
+                    <select id="tipo-de-valor" required>
+                        <!--<option disabled selected>Tipo de Cotação</option>-->
+                    </select>
+                </div>
                 <input type="submit" value="Converter" id="btn-convert" onclick="convert()">
             </div>
             <div class="area-respostas">
