@@ -103,18 +103,21 @@ function buscaValor(moeda1, moeda2, tipo){
 
 let btnMoreInfors = document.querySelector('#duvida')
 let abrirModal = false
+let modal = document.querySelector('.modal')
 
 btnMoreInfors.addEventListener('click', ()=>{
     abrirModal = !abrirModal
 
-    let modal = document.querySelector('.modal')
 
     if(abrirModal) {
         modal.style.display = 'block'
         btnMoreInfors.style.color = 'red'
+        btnMoreInfors.style.borderColor = 'red'
+
     }
     else {
         modal.style.display = 'none'
         btnMoreInfors.style.color = '#4e4e4e'
+        btnMoreInfors.style.borderColor = '#4e4e4e'
     }
 })
