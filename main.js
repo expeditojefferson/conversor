@@ -108,16 +108,16 @@ let modal = document.querySelector('.modal')
 btnMoreInfors.addEventListener('click', ()=>{
     abrirModal = !abrirModal
 
-
     if(abrirModal) {
-        modal.style.display = 'block'
-        btnMoreInfors.style.color = 'red'
-        btnMoreInfors.style.borderColor = 'red'
+        modal.style.display = 'flex'
 
     }
     else {
         modal.style.display = 'none'
-        btnMoreInfors.style.color = '#4e4e4e'
-        btnMoreInfors.style.borderColor = '#4e4e4e'
     }
+})
+
+modal.addEventListener('click', ()=>{
+    modal.style.display = 'none'
+    abrirModal = false
 })
