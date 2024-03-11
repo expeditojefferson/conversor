@@ -14,6 +14,7 @@ input[type=number] {
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Roboto';
+    user-select:none;
 }
 
 main {
